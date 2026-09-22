@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Prizma! 🌸 Forever & Always</title>
+  <meta name="description" content="A special, heartfelt birthday celebration website made with love for Prizma.">
+
+  <!-- Fonts: Playfair Display (Editorial Elegance), Caveat (Handwritten Love), Plus Jakarta Sans (Clean UI) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Dancing+Script:wght@600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons & Canvas Confetti -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Ambient Floating Petals & Light Orbs -->
+  <div class="ambient-orb orb-1"></div>
+  <div class="ambient-orb orb-2"></div>
+  <div class="ambient-orb orb-3"></div>
+  <canvas id="petals-canvas" class="petals-canvas"></canvas>
+
+  <!-- Top Floating Header & Music Player -->
+  <header class="top-nav">
+    <div class="nav-container">
+      <div class="brand">
+        <span class="heart-icon">💖</span>
+        <span class="brand-text">Happy Birthday, <span class="prizma-name">Prizma</span></span>
+      </div>
+
+      <!-- Music Controller Bar -->
+      <div class="music-pill" id="music-pill" title="Play / Pause Birthday Melody">
+        <div class="vinyl-disc" id="vinyl-disc">
+          <div class="vinyl-inner"></div>
+        </div>
+        <div class="music-info">
+          <span class="music-title">Birthday Love Melody 🎵</span>
+          <span class="music-status" id="music-status">Tap To Play</span>
+        </div>
+        <button class="music-btn" id="music-toggle-btn" aria-label="Toggle music">
+          <i data-lucide="play" id="play-icon"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Wrapper -->
+  <main class="page-container">
+
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+      <div class="hero-text-wrap">
+        <div class="greeting-badge">
+          <span class="washi-tape"></span>
+          <span class="handwritten-tag">For the most precious soul ✨</span>
+        </div>
+        <h1 class="hero-title">
+          Happy Birthday, <br>
+          <span class="name-gradient">Prizma</span>! 🌸
+        </h1>
+        <p class="hero-paragraph">
+          To the one who brings grace, warmth, and endless smiles into our world. Today is all about celebrating your beauty, your laughter, your kindness, and all the magical memories we share together.
+        </p>
+        <div class="hero-buttons">
+          <a href="#cake-section" class="btn btn-rose">
+            <i data-lucide="flame"></i>
+            <span>Blow The Candles</span>
+          </a>
+          <a href="#gallery-section" class="btn btn-glass">
+            <i data-lucide="image"></i>
+            <span>Photo Memories</span>
+          </a>
+          <a href="#video-section" class="btn btn-glass">
+            <i data-lucide="video"></i>
+            <span>Special Video</span>
+          </a>
+          <a href="#secret-gift" class="btn btn-gold">
+            <i data-lucide="gift"></i>
+            <span>Secret Gift 💐</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Hero Polaroid Highlight Cluster (Using Prizma's actual photos) -->
+      <div class="hero-visual">
+        <div class="polaroid-card hero-polaroid-1" onclick="openLightbox('IMG20250516122204.jpg', 'Grace & Radiance ✨', 'May 2025')">
+          <div class="tape-strip"></div>
+          <div class="img-frame">
+            <img src="IMG20250516122204.jpg" alt="Prizma Portrait">
+          </div>
+          <div class="polaroid-note">
+            <span class="handwritten-note">Always brightening the day ❤️</span>
+          </div>
+        </div>
+
+        <div class="polaroid-card hero-polaroid-2" onclick="openLightbox('10100.jpg', 'Pure Happiness 🌸', 'Special Moment')">
+          <div class="tape-strip right"></div>
+          <div class="img-frame">
+            <img src="10100.jpg" alt="Prizma Smile">
+          </div>
+          <div class="polaroid-note">
+            <span class="handwritten-note">That precious smile! ✨</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: INTERACTIVE BIRTHDAY CAKE -->
+    <section class="section-block" id="cake-section">
+      <div class="section-title-wrap">
+        <span class="kicker">🎂 Make A Sweet Wish</span>
+        <h2 class="title">The Birthday Cake Ritual</h2>
+        <p class="subtitle">Close your eyes, make your deepest wish, and blow out the candles, Prizma!</p>
+      </div>
+
+      <div class="cake-stage">
+        <div class="cake-box">
+          <div class="cake-plate"></div>
+          <div class="cake-layer bottom-layer">
+            <div class="frosting-drip drip-1"></div>
+            <div class="frosting-drip drip-2"></div>
+            <div class="frosting-drip drip-3"></div>
+          </div>
+          <div class="cake-layer top-layer">
+            <div class="berries">
+              <span>🍓</span><span>🌸</span><span>🍓</span>
+            </div>
+          </div>
+
+          <!-- Candles -->
+          <div class="candles-container">
+            <div class="candle c1">
+              <div class="candle-flame"></div>
+              <div class="candle-smoke"></div>
+            </div>
+            <div class="candle c2">
+              <div class="candle-flame"></div>
+              <div class="candle-smoke"></div>
+            </div>
+            <div class="candle c3">
+              <div class="candle-flame"></div>
+              <div class="candle-smoke"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cake-action-area">
+          <p class="wish-hint" id="cake-status-text">✨ The candles are burning bright. Make your wish...</p>
+          <div class="cake-buttons">
+            <button class="btn btn-rose btn-lg" id="blow-candles-btn">
+              <i data-lucide="wind"></i>
+              <span>Blow Out Candles 💨</span>
+            </button>
+            <button class="btn btn-glass" id="relight-btn" style="display: none;">
+              <i data-lucide="flame"></i>
+              <span>Relight Candles</span>
+            </button>
+          </div>
+
+          <!-- Secret Birthday Message Card (Reveals after blowing) -->
+          <div class="wish-revealed-card" id="wish-card">
+            <div class="wish-heart-badge">💖 WISH SEALED WITH LOVE 💖</div>
+            <h3 class="wish-heading">Happy Birthday Dearest Prizma!</h3>
+            <p class="wish-message">
+              "May this year bring you endless happiness, boundless peace, dreams come true, and love in every single heartbeat. You deserve the entire universe and so much more!"
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: PHOTO MEMORIES SCRAPBOOK (ALL 14 PHOTOS) -->
+    <section class="section-block" id="gallery-section">
+      <div class="section-title-wrap">
+        <span class="kicker">📸 Captured Memories</span>
+        <h2 class="title">Prizma's Scrapbook Album</h2>
+        <p class="subtitle">Every single picture holds a story, a laughter, and a moment we cherish forever.</p>
+      </div>
+
+      <div class="scrapbook-grid" id="scrapbook-grid">
+        <!-- 14 Polaroid Cards with Prizma's photos -->
+
+        <div class="polaroid-card" style="transform: rotate(-2.5deg);" onclick="openLightbox('IMG20250516122204.jpg', 'Elegance & Charm ✨', 'May 2025')">
+          <div class="tape-strip"></div>
+          <div class="img-frame"><img src="IMG20250516122204.jpg" alt="Prizma Memory" loading="lazy"></div>
+          <div class="polaroid-note"><span class="handwritten-note">Grace in every step 🌸</span></div>
+        </div>
+
+        <div class="polaroid-card" style="transform: rotate(3deg);" onclick="openLightbox('10100.jpg', 'Radiant Smile 💖', 'Treasured')">
+          <div class="tape-strip right"></div>
+          <div class="img-frame"><img src="10100.jpg" alt="Prizma Memory" loading="lazy"></div>
+          <div class="polaroid-note"><span class="handwritten-note">That contagious laugh! ✨</span></div>
+        </div>
+
+        <div class="polaroid-card" style="transform: rotate(-1.5deg);" onclick="openLightbox('IMG20250516123636.jpg', 'Beautiful Day Out 🌿', 'Memories')">
+          <div class="tape-strip left"></div>
+          <div class="img-frame"><img src="IMG20250516123636.jpg" alt="Prizma Memory" loading="lazy"></div>
+          <div class="polaroid-note"><span class="handwritten-note">Sunlight & good vibes ☀️</span></div>
+        </div>
+
+        <div class="polaroid-card" style="transform: rotate(2deg);" onclick="openLightbox('IMG20250409152036.jpg', 'Sweetest Moments 🌷', 'April 2025')">
+          <div class="tape-strip"></div>
+          <div class="img-frame"><img src="IMG20250409152036.jpg" alt="Prizma Memory" loading="lazy"></div>
+          <div class="polaroid-note"><span class="handwritten-note">Unforgettable time together 💕</span></div>
+        </div>
+
+        <div class="polaroid-card" style="transform: rotate(-3deg);" onclick="openLightbox('IMG20241227152121.jpg', 'Winter Glow ❄️', 'December 2024')">
+          <div class="tape-strip right"></div>
+          <div class="img-frame"><img src="IMG20241227152121.jpg" alt="Prizma Memory" loading="lazy"></div>
+          <div class="polaroid-note"><span class="handwritten-note">Looking stunning as always ✨</span></div>
+        </div>
+
+        <div class="polaroid-card" style="transform: rotate(2.5deg);" onclick="openLightbox('IMG20241227152131.jpg', 'Candid Perfection 📸', 'December 2024')">
+          <div class="tape-strip left"></div>
+          <div class="img-frame"><img src="IMG20241227152131.jpg" alt="Prizma Memory" loading="lazy"></div>
+          <div class="polaroid-note"><span class="handwritten-note">Pure warmth & heart ❤️</span></div>
+        </div>
+
+        <div class="polaroid-card" style="transform: rotate(-2deg);" onclick="openLightbox('38377.jpg', 'Golden Hour Glow 🌅', 'Special Day')">
+          <div class="tape-strip"></div>
+          <div class="img-frame"><img src="38377.jpg" alt="Prizma Memory" loading="lazy"></div>
+          <div class="polaroid-note"><span class="handwritten-note">Shining bright 🌟</span></div>
+        </div>
+
+        <div class="polaroid-card" style="transform: rotate(3deg);" onclick="openLightbox('18355.jpg', 'Charming Prizma 💐', 'Golden Moments')">
+          <div class="tape-strip right"></div>
+          <div class="img-frame"><img src="18355.jpg" alt="Prizma Memory" loading="lazy"></div>
+          <div class="polaroid-note"><span class="handwritten-note">Always full of light 💫</span></div>
+        </div>
+
+        <div class="polaroid-card" style="transform: rotate(-1.5deg);" onclick="openLightbox('18564.jpg', 'Soft & Peaceful 🍃', 'Calm Days')">
+          <div class="tape-strip left"></div>
+          <div class="img-frame"><img src="18564.jpg" alt="Prizma Memory" loading="lazy"></div>
+          <div class="polaroid-note"><span class="handwritten-note">Serene & beautiful 🌸</span></div>
+        </div>
+
+        <div class="polaroid-card" style="transform: rotate(2deg);" onclick="openLightbox('8200.jpg', 'Playful & Fun 🎈', 'Laughter')">
+          <div class="tape-strip"></div>
+          <div class="img-frame"><img src="8200.jpg" alt="Prizma Memory" loading="lazy"></div>
+          <div class="polaroid-note"><span class="handwritten-note">Endless laughs & joy 😄</span></div>
+        </div>
+
+        <div class="polaroid-card" style="transform: rotate(-2.5deg);" onclick="openLightbox('8202.jpg', 'Timeless Beauty 🌺', 'Memories')">
+          <div class="tape-strip right"></div>
+          <div class="img-frame"><img src="8202.jpg" alt="Prizma Memory" loading="lazy"></div>
+          <div class="polaroid-note"><span class="handwritten-note">A memory to cherish forever ✨</span></div>
+        </div>
+
+        <div class="polaroid-card" style="transform: rotate(1.5deg);" onclick="openLightbox('8442.jpg', 'Sweet Smile 😊', 'Happy Times')">
+          <div class="tape-strip left"></div>
+          <div class="img-frame"><img src="8442.jpg" alt="Prizma Memory" loading="lazy"></div>
+          <div class="polaroid-note"><span class="handwritten-note">The warmest aura 💖</span></div>
+        </div>
+
+        <div class="polaroid-card" style="transform: rotate(-3deg);" onclick="openLightbox('11322.jpg', 'Unforgettable 💫', 'Milestones')">
+          <div class="tape-strip"></div>
+          <div class="img-frame"><img src="11322.jpg" alt="Prizma Memory" loading="lazy"></div>
+          <div class="polaroid-note"><span class="handwritten-note">So many reasons to smile 🌷</span></div>
+        </div>
+
+        <div class="polaroid-card" style="transform: rotate(2.5deg);" onclick="openLightbox('11325.jpg', 'Forever Special 💝', 'Special Moments')">
+          <div class="tape-strip right"></div>
+          <div class="img-frame"><img src="11325.jpg" alt="Prizma Memory" loading="lazy"></div>
+          <div class="polaroid-note"><span class="handwritten-note">One in a million! 👑</span></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: SPECIAL VIDEO REEL -->
+    <section class="section-block" id="video-section">
+      <div class="section-title-wrap">
+        <span class="kicker">🎥 Motion Memories</span>
+        <h2 class="title">Special Video For Prizma</h2>
+        <p class="subtitle">A living glimpse into the joyous, lively moments we hold in our hearts.</p>
+      </div>
+
+      <div class="video-card-stage">
+        <div class="video-frame">
+          <div class="video-header-bar">
+            <div class="window-dots">
+              <span class="dot d1"></span>
+              <span class="dot d2"></span>
+              <span class="dot d3"></span>
+            </div>
+            <span class="video-label">📹 Prizma's Special Reel (2025-05-16)</span>
+            <span class="video-rec"><span class="rec-pulsing"></span> HD</span>
+          </div>
+
+          <div class="video-screen">
+            <video id="prizma-video" controls playsinline preload="metadata">
+              <source src="2025-05-16-125105832.mp4" type="video/mp4">
+              Your browser does not support HTML5 video.
+            </video>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: SECRET GIFT - INTERACTIVE BLOOMING FLOWER BOUQUET -->
+    <section class="section-block" id="secret-gift">
+      <div class="section-title-wrap">
+        <span class="kicker">🎁 Special Delivery</span>
+        <h2 class="title">The Secret Birthday Gift</h2>
+        <p class="subtitle">A heartfelt surprise specially wrapped for Prizma. Tap the gift box to reveal your gift!</p>
+      </div>
+
+      <div class="gift-container">
+        <!-- 3D Gift Box Stage -->
+        <div class="gift-box" id="gift-box" onclick="openSurpriseGift()">
+          <div class="gift-lid" id="gift-lid">
+            <div class="lid-bow">🎀</div>
+          </div>
+          <div class="gift-body">
+            <div class="gift-ribbon-v"></div>
+            <div class="gift-ribbon-h"></div>
+          </div>
+          <div class="gift-tap-tag" id="gift-prompt">
+            <span>👆 Tap to open surprise</span>
+          </div>
+        </div>
+
+        <!-- Blooming Bouquet & Card (Revealed on click) -->
+        <div class="bouquet-reveal-stage" id="bouquet-stage">
+          <div class="bouquet-graphic">
+            <div class="flower-center">
+              <div class="bloom b1">🌹</div>
+              <div class="bloom b2">🌸</div>
+              <div class="bloom b3">🌷</div>
+              <div class="bloom b4">🌺</div>
+              <div class="bloom b5">💐</div>
+              <div class="bloom b6">✨</div>
+            </div>
+            <div class="bouquet-wrapper-paper"></div>
+            <div class="bouquet-ribbon">🎀</div>
+          </div>
+
+          <div class="love-letter-card">
+            <div class="letter-stamp">💐 TO PRIZMA WITH LOVE</div>
+            <h3 class="letter-title">A Bouquet of Endless Blessings 🌹</h3>
+            <p class="letter-body">
+              "Just like these flowers that blossom with freshness and grace, may your life always bloom with happiness, love, peace, and laughter. You are truly rare, genuine, and deeply treasured. Happy Birthday, Prizma!"
+            </p>
+            <div class="letter-footer">
+              <span>Always & Forever ❤️</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer-wrap">
+      <p class="footer-handwritten">Crafted with pure love, warm blessings, and memories for <span class="prizma-highlight">Prizma</span> 🌸</p>
+      <p class="footer-small">Wishing you the sweetest, most magical birthday yet!</p>
+      <div class="footer-action">
+        <button class="btn btn-rose btn-sm" onclick="triggerConfettiShower()">
+          <i data-lucide="party-popper"></i>
+          <span>Shower Confetti! 🎉</span>
+        </button>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- LIGHTBOX MODAL -->
+  <div class="lightbox-modal" id="lightbox-modal" onclick="closeLightbox(event)">
+    <div class="lightbox-content">
+      <button class="lightbox-close" onclick="closeLightboxDirect()"><i data-lucide="x"></i></button>
+      <div class="lightbox-polaroid">
+        <div class="lightbox-img-box">
+          <img id="lightbox-img" src="" alt="Prizma Memory">
+        </div>
+        <div class="lightbox-footer">
+          <h3 id="lightbox-title"></h3>
+          <p id="lightbox-date"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
